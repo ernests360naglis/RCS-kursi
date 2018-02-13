@@ -1,3 +1,3 @@
 ﻿# RCS-kursi
 Programmēšana kursa laikā
-Edit
+Edit un edit
