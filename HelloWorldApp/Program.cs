@@ -25,7 +25,7 @@ namespace HelloWorldApp
             string usersName;
             //paprasam konsolei ievadīt tekstu, saglabājam rezultātu mainīgu
             usersName = Console.ReadLine();
-            Console.WriteLine("Sveiks, " + usersName + "!"); //"Sveiks, Ernests"
+            Console.WriteLine("Labdien, " + usersName + "!"); //"Sveiks, Ernests"
             Console.ReadLine();
         }
 
