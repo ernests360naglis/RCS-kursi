@@ -27,7 +27,6 @@ namespace HelloWorldApp
             string age;
             Console.WriteLine("Lūdzu ievadi savu vecumu:");
             age = Console.ReadLine();
-            age = age + 100;
             //paprasam konsolei ievadīt tekstu, saglabājam rezultātu mainīgu
             Console.WriteLine("Labdien, " + usersName + "!" + " Tavs vecums ir " + age + "!"); //"Sveiks, Ernests"
             Console.ReadLine();
