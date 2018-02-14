@@ -23,9 +23,13 @@ namespace HelloWorldApp
             Console.WriteLine("Lūdzu ievadi savu vārdu:");
             //izveidojam mainīgo, kur glabāt lietotāja ievadīto vērtību
             string usersName;
-            //paprasam konsolei ievadīt tekstu, saglabājam rezultātu mainīgu
             usersName = Console.ReadLine();
-            Console.WriteLine("Labdien, " + usersName + "!"); //"Sveiks, Ernests"
+            string age;
+            Console.WriteLine("Lūdzu ievadi savu vecumu:");
+            age = Console.ReadLine();
+            age = age + 100;
+            //paprasam konsolei ievadīt tekstu, saglabājam rezultātu mainīgu
+            Console.WriteLine("Labdien, " + usersName + "!" + " Tavs vecums ir " + age + "!"); //"Sveiks, Ernests"
             Console.ReadLine();
         }
 
