@@ -10,12 +10,66 @@ namespace Kalkulators
     {
         static void Main(string[] args)
         {
-            RadiusaAprēķināšana();
+            string usersInput = "";
+            while (true)
+            {
+                Console.WriteLine("Lūdzu izvēlies daebību");
+                Console.WriteLine("a - Izrēķināt rādiusa kaut ko");
+                Console.WriteLine("b - Saskatīt divus skaitļus");
+                Console.WriteLine("c - Vai skaitlis dalās ar ");
+                Console.WriteLine("x - Beigt");
+                usersInput = Console.ReadLine();
+                //ja atbilde ir a, tad izauktu apļa funkciju
+                //ja atbilde ir b, tad izsaukt saskaitīšanas f-ciju
+                //visos citos gadījumos parādīt kļūdu
+                //f-cija: VaiSkaitlisDalāsAr
+                if (usersInput == "a")
+                {
+                    RadiusaAprēķināšana();
+                }
+                else if (usersInput == "b")
+                {
+                    DivuSkaitļuSaskaitīšana();
+                }
+                else if (usersInput == "c")
+                {
+                    VaiSkaitlisDalāsAr();
+                }
+                else if(usersInput == "x")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Sorry vecīt, nesapratu.");
+                }
+            }
+            
+
+
+            Console.ReadLine();
+            //RadiusaAprēķināšana();
                                   // Ctrl + K D
                                     //Turot Ctrl spiež K, tad D
-            DivuSkaitļuSaskaitīšana();
+           //DivuSkaitļuSaskaitīšana();
         }
 
+        static void VaiSkaitlisDalāsAr()
+        {
+            double dalāmais = GetNumberFromUser("Lūdzu ievadiet dalāmo");
+            double dalītājs = GetNumberFromUser("Lūdzu ievadiet dalītāju");
+            double modulis = dalāmais % dalītājs;
+            if(modulis == 0)
+            {
+                Console.WriteLine("Dalās!");
+            }
+            else
+            {
+                Console.WriteLine("Nedalās");
+            }
+        }
+
+        // void- šī funkcija neko neatgriež
         static void DivuSkaitļuSaskaitīšana()
         {
                                //izveidojam mainīgo, kur glabāt lietotāja ievadīto pirmo skaitli
@@ -40,7 +94,7 @@ namespace Kalkulators
             double radius;
                                              //izveidosim mainīgu, kur glabāt rezultātu
             double result;
-                                         //pie''sķirsim radisusa mainīgajam vērtību
+                                         //piesķirsim radisusa mainīgajam vērtību
             radius = GetNumberFromUser("Lūdzu ievadiet rādiusu");
                                           //veicam aprēķināšanas operāciju
             result = radius * radius * 3.14;
