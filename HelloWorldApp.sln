@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldApp", "HelloWorld
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalkulators", "Kalkulators\Kalkulators.csproj", "{45887D8A-FBA7-4D28-9760-A378C0424F52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skaitļu minēšanas spēle", "Skaitļu minēšanas spēle\Skaitļu minēšanas spēle.csproj", "{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{45887D8A-FBA7-4D28-9760-A378C0424F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45887D8A-FBA7-4D28-9760-A378C0424F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45887D8A-FBA7-4D28-9760-A378C0424F52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

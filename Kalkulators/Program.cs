@@ -35,7 +35,7 @@ namespace Kalkulators
                 {
                     VaiSkaitlisDalāsAr();
                 }
-                else if(usersInput == "x")
+                else if (usersInput == "x")
                 {
                     break;
                 }
@@ -44,14 +44,14 @@ namespace Kalkulators
                     Console.WriteLine("Sorry vecīt, nesapratu.");
                 }
             }
-            
+
 
 
             Console.ReadLine();
             //RadiusaAprēķināšana();
-                                  // Ctrl + K D
-                                    //Turot Ctrl spiež K, tad D
-           //DivuSkaitļuSaskaitīšana();
+            // Ctrl + K D
+            //Turot Ctrl spiež K, tad D
+            //DivuSkaitļuSaskaitīšana();
         }
 
         static void VaiSkaitlisDalāsAr()
@@ -59,7 +59,7 @@ namespace Kalkulators
             double dalāmais = GetNumberFromUser("Lūdzu ievadiet dalāmo");
             double dalītājs = GetNumberFromUser("Lūdzu ievadiet dalītāju");
             double modulis = dalāmais % dalītājs;
-            if(modulis == 0)
+            if (modulis == 0)
             {
                 Console.WriteLine("Dalās!");
             }
@@ -72,44 +72,44 @@ namespace Kalkulators
         // void- šī funkcija neko neatgriež
         static void DivuSkaitļuSaskaitīšana()
         {
-                               //izveidojam mainīgo, kur glabāt lietotāja ievadīto pirmo skaitli
+            //izveidojam mainīgo, kur glabāt lietotāja ievadīto pirmo skaitli
             double cipars1;
-                                 //izsaucam skaitļa iegūšanas f-ciju, rezultātu ierakstam mainīgajā
+            //izsaucam skaitļa iegūšanas f-ciju, rezultātu ierakstam mainīgajā
             cipars1 = GetNumberFromUser("lūdzu ievadiet pirmo skaitli");
-                              //izveidojam mainīgo, kur glabāt lietotāja ievadīto otro skaitli
+            //izveidojam mainīgo, kur glabāt lietotāja ievadīto otro skaitli
             double cipars2;
             cipars2 = GetNumberFromUser("lūdzu ievadiet otro skaitli");
-                                //izveidojam mainīgo, kurā glabāt rezultātu
+            //izveidojam mainīgo, kurā glabāt rezultātu
             double result;
-                                    //aprēķinām rezultātu un ierakstam mainīgajā
+            //aprēķinām rezultātu un ierakstam mainīgajā
             result = cipars1 + cipars2;
             Console.WriteLine("Rezultāts: " + result);
             Console.ReadLine();
-            
+
         }
 
         static void RadiusaAprēķināšana()
         {
-                                     //izveidojam mainīgo, kur glabāt R
+            //izveidojam mainīgo, kur glabāt R
             double radius;
-                                             //izveidosim mainīgu, kur glabāt rezultātu
+            //izveidosim mainīgu, kur glabāt rezultātu
             double result;
-                                         //piesķirsim radisusa mainīgajam vērtību
+            //piesķirsim radisusa mainīgajam vērtību
             radius = GetNumberFromUser("Lūdzu ievadiet rādiusu");
-                                          //veicam aprēķināšanas operāciju
+            //veicam aprēķināšanas operāciju
             result = radius * radius * 3.14;
-                                      //parādam rezultātu lietotājam
+            //parādam rezultātu lietotājam
             Console.WriteLine("Rezultāts: " + result);
             Console.ReadLine();
         }
 
         static double GetNumberFromUser(string msg)
         {
-                               //izvadam f-cijai iedoto paziņojumu
+            //izvadam f-cijai iedoto paziņojumu
             Console.WriteLine(msg);
-                                  //nolasam lietotāja ievadi no ekrāna un ierakstam teksta mainīgo
+            //nolasam lietotāja ievadi no ekrāna un ierakstam teksta mainīgo
             string ievadītaisTeksts = Console.ReadLine();
-                                     //izveidojam mainīgo, kur glabāt apaļo skaitli
+            //izveidojam mainīgo, kur glabāt apaļo skaitli
             double parsedNumber;
             //ievadīto tekstu pārveidojam par skaitli un ierakstam mainīgo
             bool parseWasSuccess = double.TryParse(ievadītaisTeksts, out parsedNumber);
