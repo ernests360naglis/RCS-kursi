@@ -113,7 +113,7 @@ namespace Kalkulators
             double parsedNumber;
             //ievadīto tekstu pārveidojam par skaitli un ierakstam mainīgo
             bool parseWasSuccess = double.TryParse(ievadītaisTeksts, out parsedNumber);
-            if (parseWasSuccess == false)
+            if (!parseWasSuccess)
             {
                 Console.WriteLine("slikti ievadīts skaitlis " + ievadītaisTeksts);
                 Console.WriteLine("ievadi skaitli vēlreiz");
