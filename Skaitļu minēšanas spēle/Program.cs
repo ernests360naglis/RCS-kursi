@@ -21,11 +21,13 @@ namespace Skaitļu_minēšanas_spēle
                 diceNumberGenerator = new Random();
                 //uzģeneŗēt gadījuma skaitli līdz šai robežai
                 int guessableNumber = diceNumberGenerator.Next(1, maxNumber);
+                bool hasUserWon = false;
+
 
                 //cikls kamēr lietotājs neuzmin
-                while (true)
+                for ( int tryCount = 1; tryCount <= 4 && !hasUserWon; tryCount = tryCount + 1)
                 {
-                    Console.WriteLine("Mēģini kamēr uzminēsi");
+                    Console.WriteLine("Mēģinājums #" + tryCount + " Mēģini uzminēt šo skaitli");
                     int usersGuess = int.Parse(Console.ReadLine());
                     //paprasīt lietotājam lai viņš min kāds skatlis ir izveidots
                     //salīdzināt vai lietotājs ir uzminējis
@@ -34,10 +36,10 @@ namespace Skaitļu_minēšanas_spēle
                     if (usersGuess == guessableNumber || usersGuess == 1234567890)
                     {
                         Console.WriteLine("Tu esi uzvarējis");
-                        break;
+                        hasUserWon = true;
                     }
 
-                    if (guessableNumber > usersGuess)
+                    else if (guessableNumber > usersGuess)
                     {
                         Console.WriteLine("es esmu iedomājies lielāku skatili");
                     }
@@ -55,7 +57,7 @@ namespace Skaitļu_minēšanas_spēle
                 //pieprasam ģeneratoram iedot skaitli no 1 līdz 100
                 //int secondDiceValue = diceNumberGenerator.Next(1, 101);
                 //Console.WriteLine("Tavs kauliņa otrais metiens: " + secondDiceValue);
-                Console.ReadLine();
+                //Console.ReadLine();
                 if (diceValue == guessableNumber)
                 {
                     Console.WriteLine("Tev nu gan veicas!");
@@ -68,17 +70,10 @@ namespace Skaitļu_minēšanas_spēle
 
 
 
+                
 
 
-
-                if (diceValue > guessableNumber)
-                {
-                    Console.WriteLine("minamais skaitlis ir mazāks");
-                }
-                else if (diceValue < guessableNumber)
-                {
-                    Console.WriteLine("minamais skaitlis ir lielāks");
-                }
+               
             }
         }
     }

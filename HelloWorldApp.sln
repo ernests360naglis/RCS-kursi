@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalkulators", "Kalkulators\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skaitļu minēšanas spēle", "Skaitļu minēšanas spēle\Skaitļu minēšanas spēle.csproj", "{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlānotājsApp", "PlānotājsApp\PlānotājsApp.csproj", "{A32F27CB-1CEE-41A2-A4DE-6BD0288CFF74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97CD5CF4-D5FA-4CEF-AA3A-ED0F6BD0A7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32F27CB-1CEE-41A2-A4DE-6BD0288CFF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32F27CB-1CEE-41A2-A4DE-6BD0288CFF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32F27CB-1CEE-41A2-A4DE-6BD0288CFF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32F27CB-1CEE-41A2-A4DE-6BD0288CFF74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
