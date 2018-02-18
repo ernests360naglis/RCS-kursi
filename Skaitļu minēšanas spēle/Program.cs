@@ -12,7 +12,7 @@ namespace Skaitļu_minēšanas_spēle
         {
             {
                 //Console.WriteLine("Tavs uzdevums ir uzminēt skaitli no 1 līdz 10");
-                Console.WriteLine("Ievadi skaitli līdz kuram gribi minēt un mēģini uz uzminēt ");
+                Console.WriteLine("Ievadi skaitli līdz kuram gribi minēt un mēģini uzminēt ");
                 //paprasīt lietotājam, cik lielu skaitli viņš grib minēt
                 int maxNumber = int.Parse(Console.ReadLine());
                 //izveidojam mainīgo, kur glabāt skaitļu ģeneratoru instanci
@@ -48,31 +48,20 @@ namespace Skaitļu_minēšanas_spēle
                         Console.WriteLine("es esmu iedomājies mazāku skaitli");
                     }
                 }
+                if (!hasUserWon)
+                {
+                    Console.WriteLine("Ajh, šoreiz tu zaudēji! Mēģini vēlreiz, nākošreiz tev noteikti paveiksies! Es biju iedomājies skaitli: " + guessableNumber);
+                }
                 Console.ReadLine();
             
                 //pieprasam ģeneratoram iedoto skaitli no 1 līdz 6
-                int diceValue = diceNumberGenerator.Next(1, 7);
+                //int diceValue = diceNumberGenerator.Next(1, 7);
                 //Console.WriteLine("Tavs kauliņa metiens: " + diceValue);
                 //Console.ReadLine();
                 //pieprasam ģeneratoram iedot skaitli no 1 līdz 100
                 //int secondDiceValue = diceNumberGenerator.Next(1, 101);
                 //Console.WriteLine("Tavs kauliņa otrais metiens: " + secondDiceValue);
                 //Console.ReadLine();
-                if (diceValue == guessableNumber)
-                {
-                    Console.WriteLine("Tev nu gan veicas!");
-                }
-                if (diceValue != guessableNumber)
-                {
-                    Console.WriteLine("Neuzminēji! Mēģini vēlreiz!");
-                }
-
-
-
-
-                
-
-
                
             }
         }
