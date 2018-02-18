@@ -12,9 +12,11 @@ namespace Skaitļu_minēšanas_spēle
         {
             {
                 //Console.WriteLine("Tavs uzdevums ir uzminēt skaitli no 1 līdz 10");
-                Console.WriteLine("Ievadi skaitli līdz kuram gribi minēt un mēģini uzminēt ");
+                Console.WriteLine("Pārbaudi savu veiksmi!");
+                Console.WriteLine("Ievadi skaitli līdz kuram gribi minēt: ");
                 //paprasīt lietotājam, cik lielu skaitli viņš grib minēt
                 int maxNumber = int.Parse(Console.ReadLine());
+                Console.WriteLine("Tev ir 4 mēģinājumi, lai uzminētu šo skaitli. Veiksmi!");
                 //izveidojam mainīgo, kur glabāt skaitļu ģeneratoru instanci
                 Random diceNumberGenerator;
                 //ierakstam mainīgā jaunizveidotā ģeneratoru
@@ -27,7 +29,7 @@ namespace Skaitļu_minēšanas_spēle
                 //cikls kamēr lietotājs neuzmin
                 for ( int tryCount = 1; tryCount <= 4 && !hasUserWon; tryCount = tryCount + 1)
                 {
-                    Console.WriteLine("Mēģinājums #" + tryCount + " Mēģini uzminēt šo skaitli");
+                    Console.WriteLine("Mēģinājums #" + tryCount + " Skaitlis ir: ");
                     int usersGuess = int.Parse(Console.ReadLine());
                     //paprasīt lietotājam lai viņš min kāds skatlis ir izveidots
                     //salīdzināt vai lietotājs ir uzminējis
@@ -35,7 +37,7 @@ namespace Skaitļu_minēšanas_spēle
                     //vai minējums ir lielāks vai mazāks par minamo skaitli un turpināt spēli
                     if (usersGuess == guessableNumber || usersGuess == 1234567890)
                     {
-                        Console.WriteLine("Tu esi uzvarējis");
+                        Console.WriteLine("Tev nu gan veicas! Tu uzminēji šo skaitli! Balvā tu saņem koņču, kas stāv uz skapīša");
                         hasUserWon = true;
                     }
 
@@ -50,7 +52,8 @@ namespace Skaitļu_minēšanas_spēle
                 }
                 if (!hasUserWon)
                 {
-                    Console.WriteLine("Ajh, šoreiz tu zaudēji! Mēģini vēlreiz, nākošreiz tev noteikti paveiksies! Es biju iedomājies skaitli: " + guessableNumber);
+                    Console.WriteLine("Ajh, šoreiz tu zaudēji! Nākošreiz tev noteikti paveiksies! Es biju iedomājies skaitli: " + guessableNumber);
+                    Console.WriteLine("Ja tev vēl ir koņča mēģini vēlreiz!");
                 }
                 Console.ReadLine();
             
