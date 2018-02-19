@@ -64,13 +64,13 @@ namespace PlānotājsApp
             //Ctrl + .
             for(int i = 0; i < todoEntries.Count; i++)
             {
-                File.AppendAllText(@"C:\Users\ernes\Documents\RSC kursi\ToDoSaveSettings\saveToDoSettings.txt", todoEntries[i] + "\r\n");
+                File.AppendAllText(@"C:\Users\ernes\Documents\Programmēšana\ToDoSaveSettings.txt", todoEntries[i] + "\r\n");
             }
         }
         
         public void LoadFromFile()
         {
-            string[] allLinesFromFile = File.ReadAllLines(@"C:\Users\ernes\Documents\RSC kursi\ToDoSaveSettings\saveToDoSettings.txt");
+            string[] allLinesFromFile = File.ReadAllLines(@"C:\Users\ernes\Documents\Programmēšana\ToDoSaveSettings.txt");
             foreach (string listEntry in allLinesFromFile)
             {
                 todoEntries.Add(listEntry);

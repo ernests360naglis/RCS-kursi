@@ -36,7 +36,6 @@ namespace PlānotājsApp
                         break;
                     case "c":
                         // dzēst konkrētu lietu
-                        Console.WriteLine();
                         Console.WriteLine("Ievadi ieraksta numuru, kuru gribi dzēst");
                         list.ShowAllTodos();
                         int index = int.Parse(Console.ReadLine());
