@@ -41,7 +41,7 @@ namespace PlānotājsApp
             {
                 //izvadam kārtas numuru un uzdevuma nosaukumu (bet bez enter galā)
                 Console.WriteLine();
-                //ja uzdevums ir pabeigts (isCompleted == true)
+                //ja uzdevums nav pabeigts, tad to parādīt, ja tas ir izdarīts, tad nerādīt.
                 if (!todoEntries[i].isCompleted)
                 {
                     Console.Write("#" + (i + 1) + " Piezīme: " + todoEntries[i].name);
@@ -98,6 +98,9 @@ namespace PlānotājsApp
                 return;
             }
             string[] allLinesFromFile = File.ReadAllLines(pathTodoFile);
+
+            //pirms saraksta ielādes no faila, to iztīram no vecā satura
+            todoEntries.Clear();
 
             //dodamies cauri sarakstam ar teksta rindām, kas ir ielādēta no faila
             for (var index = 0; index < allLinesFromFile.Length; index += 2)
