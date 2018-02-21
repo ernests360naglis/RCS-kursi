@@ -17,6 +17,7 @@ namespace PlānotājsApp
                 Console.WriteLine("Lūdzu izvēlieties darbību: ");
                 Console.WriteLine("a - Pievienot pierakstu");
                 Console.WriteLine("b - Parādīt ierakstus");
+                Console.WriteLine("ac - Atzīmēt kā pabeigtu");
                 Console.WriteLine("c - Dzēst ierakstu");
                 Console.WriteLine("cv - Dzēst visus ierakstus");
                 Console.WriteLine("s - Saglabāt");
@@ -33,6 +34,13 @@ namespace PlānotājsApp
                     case "b":
                         // izvadīt darāmās lietas uz ekrāna
                         list.ShowAllTodos();
+                        break;
+                    case "ac":
+                        //atzīmējam uzdevumu kā izdarītu
+                        Console.WriteLine("Lūdzu ievadi pabeigtās piezīmes numuru:");
+                        list.ShowAllTodos();
+                        int doneTodoIndex = int.Parse(Console.ReadLine());
+                        list.MarkTodoAsDone(doneTodoIndex - 1);
                         break;
                     case "c":
                         // dzēst konkrētu lietu
@@ -55,6 +63,10 @@ namespace PlānotājsApp
                     case "show":
                         list.LoadFromFile();
                         break;
+                    default:
+                        Console.WriteLine("Neatpazīta komanda");
+                        break;
+
                 }
             }
         }
