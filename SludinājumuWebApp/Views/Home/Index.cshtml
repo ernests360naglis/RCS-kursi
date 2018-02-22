@@ -1,3 +1,9 @@
 ﻿
-<h2>ErnestsWeb Index</h2>
+@model List<SludinājumuWebApp.Models.Sludinājums>
 
+@foreach(var ad in Model)
+{
+    <p>@ad.Name - @ad.Price (eur)</p> <a href="/Home/Advert?advertId=@ad.AdvertId">Atvērt sludinājumu</a>
+}
+
+<!--Komentāri-->
