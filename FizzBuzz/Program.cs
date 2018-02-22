@@ -5,21 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 //MĀJASDARBS:
-// 2) izveidot FizzBuzz* (patstāvīgi)
+//FizzBuzz
 
-// (+) FizzBuzz:
-//Lietotne skaita no 1 līdz 100
+//Ja skaitlis dalās gan ar 3, gan ar 5, lietotne izvada uz ekrāna "FizzBuzz"
 //Ja skaitlis dalās ar 3, lietotne izvada uz ekrāna "Fizz"
 //Ja skaitlis dalās ar 5, lietotne izvada uz ekrāna "Buzz"
-//Ja skaitlis dalās ar gan ar 3, gan ar 5, lietotne izvada uz ekrāna "FizzBuzz"
 //Ja skaitlis nedalās ne ar 3, ne ar 5, lieotne izvada uz ekrāna pašu skaitli
-
-//Bonuspunkti:
-//1. (+) Bonuspunkts: 
 //Lietotne ļauj lietotājam ievadīt augšējo robežu(līdz cik skaitļiem jāizvada)
-//2. Bonuspunkts:
-// (+) Lietotne nenocrasho, ja lietotājs pieprasa izvadīt FizzBuzz līdz vienam kvadriljonam(1 000 000 000 000 000)
-//nezināmais [long] satur skaiļus no –9,223,372,036,854,775,808 līdz 9,223,372,036,854,775,807)
+//Lietotne nenocrasho, ja lietotājs pieprasa izvadīt FizzBuzz līdz vienam kvadriljonam(1 000 000 000 000 000)
+//nezināmais [long]
 
 namespace FizzBuzz
 {
@@ -33,15 +27,14 @@ namespace FizzBuzz
             Console.ReadLine();
 
         }
-        
-
 
        public static void Numbers1To100()
         {
             Console.WriteLine("Izvēlies skaitli līdz kuram FizzBazzot");
+            //izveidojo mainīgo kurā pieglabāt ievadīto skaitli. (Skaitlis līdz kuram FizzBazzot)
             long maxNum;
             maxNum = long.Parse(Console.ReadLine());
-            //ciklam atkārtoties tik ilgi kamēr šis skaitlis būs ne lielāks par 100
+            //ciklam atkārtoties tik ilgi kamēr šis skaitlis būs ne lielāks par ievadīto skaitli līdz kuram FizzBazzot
             for (long num = 1; num <= maxNum; num = num + 1)
             {
                 //ja šim skaitlis daloties ar 3 un 5 veidojas modilis 0, tad uzrakstīt "FizzBuzz"
@@ -66,10 +59,6 @@ namespace FizzBuzz
                 }
                 Console.ReadLine();
             }
-
-
         }
     }
-}//for ( int tryCount = 1; tryCount <= 4 && !hasUserWon; tryCount = tryCount + 1)
-//int maxNumber = int.Parse(Console.ReadLine());
-
+}

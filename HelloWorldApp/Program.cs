@@ -18,8 +18,7 @@ namespace HelloWorldApp
 
         static void SayHelloToUser()
         {
-            //palūdzam lietotājam ievadīt savu vārdu
-            //uzrakstot lūgumu ekrānā
+            //palūdzam lietotājam ievadīt savu vārdu, izvadot to Konsolē
             Console.WriteLine("Lūdzu ievadi savu vārdu:");
             //izveidojam mainīgo, kur glabāt lietotāja ievadīto vērtību
             string usersName;
