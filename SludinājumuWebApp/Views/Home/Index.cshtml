@@ -1,9 +1,14 @@
-﻿
+﻿<!--Komentāri-->
 @model List<SludinājumuWebApp.Models.Sludinājums>
 
 @foreach(var ad in Model)
 {
-    <p>@ad.Name - @ad.Price (eur)</p> <a href="/Home/Advert?advertId=@ad.AdvertId">Atvērt sludinājumu</a>
+    <p>
+        <a 
+           href="/Home/Advert?advertId=@ad.AdvertId">@ad.Name - @ad.Price (eur)
+        </a>
+    </p> 
 }
 
-<!--Komentāri-->
+@Html.ActionLink("Pievienot jaunu sludinājumu", "CreateAdvert")
+

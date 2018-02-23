@@ -5,39 +5,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
+
 namespace SludinājumuWebApp.Controllers
 {
     public class HomeController : Controller
     {
         public HomeController()
         {
-            adverts = new List<Sludinājums>();
-
-            Sludinājums ad1 = new Sludinājums();
-            ad1.AdvertId = 1;
-            ad1.Name = "BMW";
-            ad1.AdvertText = "Šis ir labs BMW";
-            ad1.Price = 2500;
-            ad1.CreationTime = DateTime.Now;
-
-            Sludinājums homeAd = new Sludinājums();
-            homeAd.AdvertId = 2;
-            homeAd.Name = "Māja";
-            homeAd.AdvertText = "Liela māja";
-            homeAd.Price = 12000;
-            homeAd.CreationTime = new DateTime(1999, 12, 31);
-
-            adverts.Add(ad1);
-            adverts.Add(homeAd);
+            advertDb = new AdvertDb();
         }
+
         private List<Sludinājums> adverts;
+        private AdvertDb advertDb;
+
         //ši f-cija tiek izsaukta, kad tiek pieprasīta WebLapas bāzes ceļš
         // GET: Home (piemēram www.ss.lv)
         public ActionResult Index()
         {
             //izsaucam Viewe f-ciju, lai uzģenerētu html rezultātu no mūsu Index.cshtml faila, 
             //tajā iekšā izmantojot datus, kas pieejami adverts sarakstā
-            return View(adverts);
+            return View(advertDb.Adverts.ToList());
         }
 
         public ActionResult Advert(int advertId)
@@ -54,6 +42,18 @@ namespace SludinājumuWebApp.Controllers
             }
 
             return View();
+        }
+
+        public ActionResult CreateAdvert()
+        {
+            return View();
+        }
+        //šis atribūts norāda, kašo f-ciju iespējams izsaukt ar POST vaicājumu. Tas ir iespējams atsūtīt viņai datus no formas
+        [HttpPost]
+        public ActionResult CreateAdvert(Sludinājums advert)
+        {
+            adverts.Add(advert);
+            return RedirectToAction("Index");
         }
     }
 }
