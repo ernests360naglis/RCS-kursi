@@ -31,7 +31,7 @@ namespace SludinājumuWebApp.Controllers
         public ActionResult Advert(int advertId)
         {
             //apskatām katru sludinājumu sarakstā
-            foreach(var ad in adverts)
+            foreach(var ad in advertDb.Adverts)
             {
                 //ja sludinājuma id ir tāds pats ko lietotājs pieprasījis,
                 if(ad.AdvertId == advertId)
@@ -52,7 +52,9 @@ namespace SludinājumuWebApp.Controllers
         [HttpPost]
         public ActionResult CreateAdvert(Sludinājums advert)
         {
-            adverts.Add(advert);
+            advert.CreationTime = DateTime.Now;
+            advertDb.Adverts.Add(advert);
+            advertDb.SaveChanges();
             return RedirectToAction("Index");
         }
     }
