@@ -1,6 +1,7 @@
 ﻿using SludinājumuWebApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,8 +16,7 @@ namespace SludinājumuWebApp.Controllers
         {
             advertDb = new AdvertDb();
         }
-
-        private List<Sludinājums> adverts;
+        
         private AdvertDb advertDb;
 
         //ši f-cija tiek izsaukta, kad tiek pieprasīta WebLapas bāzes ceļš
@@ -30,30 +30,53 @@ namespace SludinājumuWebApp.Controllers
 
         public ActionResult Advert(int advertId)
         {
-            //apskatām katru sludinājumu sarakstā
-            foreach(var ad in advertDb.Adverts)
+            Sludinājums ad = GetAdvertFromDb(advertId);
+            return View(ad);
+        }
+
+        private Sludinājums GetAdvertFromDb(int advertId)
+        {
+            foreach (var ad in advertDb.Adverts)
             {
                 //ja sludinājuma id ir tāds pats ko lietotājs pieprasījis,
                 if(ad.AdvertId == advertId)
                 {
-                    //tad izveidojam skatu izmantojot šī sludinājuma datus un atgriežam lietotājam
-                    return View(ad);
+                    //atgriežam atrasto sludinājumu
+                    return ad;
                 }
             }
-
-            return View();
+            return null;
         }
 
         public ActionResult CreateAdvert()
         {
             return View();
         }
+
         //šis atribūts norāda, kašo f-ciju iespējams izsaukt ar POST vaicājumu. Tas ir iespējams atsūtīt viņai datus no formas
         [HttpPost]
         public ActionResult CreateAdvert(Sludinājums advert)
         {
             advert.CreationTime = DateTime.Now;
             advertDb.Adverts.Add(advert);
+            advertDb.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult EditAdvert(int advertId)
+        {
+            Sludinājums editableAdvert = GetAdvertFromDb(advertId);
+            return View(editableAdvert);
+        }
+
+        [HttpPost]
+        public ActionResult EditAdvert(Sludinājums advert)
+        {
+            if (!ModelState.IsValid)
+            {
+               return View(advert);
+            }
+            advertDb.Entry(advert).State = EntityState.Modified;
             advertDb.SaveChanges();
             return RedirectToAction("Index");
         }

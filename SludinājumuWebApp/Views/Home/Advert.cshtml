@@ -20,6 +20,11 @@ else
     </div>
 
     <p>@Model.AdvertText</p>
+
+    <!--
+    <a href="Home/EditAdvert?advertId=@Model.AdvertId">rediģēt sludinājumu </a>
+    -->
+    @Html.ActionLink("Rediģēt sludinājumu", "EditAdvert", "Home", new { advertId = Model.AdvertId }, null)
 }
 
 @Html.ActionLink("Atgriezties pie sludinājumiem", "Index")
